@@ -14,7 +14,7 @@ gem 'jwt', '~> 2.3'
 # Use to auth user
 gem 'devise', '~> 4.8'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
