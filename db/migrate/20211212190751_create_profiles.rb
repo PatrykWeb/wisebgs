@@ -6,6 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[6.1]
       t.string :phone, unique: true, null: false
       t.string :nip
       t.string :krs
+      t.references :user, foreign_key: true, null: false
       t.timestamps
     end
   end

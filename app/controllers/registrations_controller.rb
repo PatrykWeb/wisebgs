@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
       token = user.generate_jwt
       render json: { token: token.to_json }
     else
-      render json: { errors: { message: 'email or password is invalid' } }
+      render json: { errors:  'email or password is invalid' }, status: :unauthorized
     end
   end
 

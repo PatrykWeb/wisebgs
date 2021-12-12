@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate_user!(options = {})
-    head :unauthorized unless signed_in?
+    render json: { errors: "you must be logged in" }, status: :unauthorized unless signed_in?
   end
 
   def current_user
