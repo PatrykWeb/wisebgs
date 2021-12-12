@@ -2,12 +2,13 @@ class Api::V1::ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @profiles = Profile.new(profile_params)
-    @profiles.user_id = @current_user_id
-    if @profiles.save
-      render :'api/v1/profiles/create', status: :created
+    profiles = Profile.new(profile_params)
+    panel = Panel.new(type_panel: 0, user_id: @current_user_id)
+    profiles.user_id = @current_user_id
+    if profiles.save && panel.save
+      render json: ProfilesSerializer.new(profiles).serializable_hash
     else
-      render json: { errors: @profiles.errors.full_messages }
+      render json: { errors: profiles.errors.full_messages }
     end
   end
 

@@ -7,7 +7,8 @@ class ApplicationController < ActionController::API
   def process_token
     if request.headers['Authorization'].present?
       begin
-        jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1], Rails.application.secrets.secret_key_base).first
+        jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1],
+                                 Rails.application.secrets.secret_key_base).first
         @current_user_id = jwt_payload['id']
       rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
         head :unauthorized
@@ -15,8 +16,8 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def authenticate_user!(options = {})
-    render json: { errors: "you must be logged in" }, status: :unauthorized unless signed_in?
+  def authenticate_user!(_options = {})
+    render json: { errors: 'you must be logged in' }, status: :unauthorized unless signed_in?
   end
 
   def current_user
@@ -26,5 +27,4 @@ class ApplicationController < ActionController::API
   def signed_in?
     @current_user_id.present?
   end
-
 end
