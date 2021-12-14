@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::API
   respond_to :json
   before_action :process_token
@@ -26,5 +28,12 @@ class ApplicationController < ActionController::API
 
   def signed_in?
     @current_user_id.present?
+  end
+
+  def check_profile
+    @profile = Profile.find_by(user_id: @current_user_id)
+    if @profile.firstname.nil?
+      render json: { errors: 'You must complete the profile to proceed further', status: :unauthorized }
+    end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -23,7 +25,7 @@ ActiveRecord::Schema.define(version: 20_211_212_190_751) do
   end
 
   create_table 'profiles', force: :cascade do |t|
-    t.string 'name', null: false
+    t.string 'firstname', null: false
     t.string 'surname', null: false
     t.string 'phone', null: false
     t.string 'nip'

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class SessionsController < Devise::SessionsController
   def create
     user = User.find_by(email: params[:email])
 
-    if user && user.valid_password?(params[:password])
+    if user&.valid_password?(params[:password])
       token = user.generate_jwt
       render json: { token: token }, status: :created
     else
