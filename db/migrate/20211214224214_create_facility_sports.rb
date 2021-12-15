@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateFacilitySports < ActiveRecord::Migration[6.1]
   def change
     create_table :facility_sports do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FacilitySportsSerializer
   include JSONAPI::Serializer
   set_type :facility_sport

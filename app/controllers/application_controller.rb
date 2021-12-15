@@ -32,8 +32,6 @@ class ApplicationController < ActionController::API
 
   def check_profile
     profile = Profile.find_by(user_id: @current_user_id)
-    if profile.nil?
-      render json: { errors: 'You must complete the profile to proceed further', status: :unauthorized }
-    end
+    render json: { errors: 'You must complete the profile to proceed further', status: :unauthorized } if profile.nil?
   end
 end
