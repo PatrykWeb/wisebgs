@@ -6,6 +6,17 @@ module Api
       before_action :authenticate_user!
       before_action :check_profile
 
+
+      def index
+        facility_sports = FacilitySport.all
+        render json: FacilitySportsSerializer.new(facility_sports).serializable_hash
+      end
+
+      def edit_id
+        facility_sports = FacilitySport.find(params[:id])
+        render json: FacilitySportsSerializer.new(facility_sports).serializable_hash if facility_sports.update_attribute(facility_sports_params)
+      end
+
       def create
         facility_sports = FacilitySport.new(facility_sports_params)
         panel = Panel.find_by(user_id: @current_user_id)

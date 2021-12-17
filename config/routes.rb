@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'profile/create' => 'profiles#create'
       post 'facility_sport/create' => 'facility_sports#create'
+      get 'facility_sport/index' => 'facility_sports#index'
+      patch 'facility_sport/:id/update' => 'facility_sports#edit_id'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
