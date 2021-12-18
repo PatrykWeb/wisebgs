@@ -21,6 +21,11 @@ gem 'jsonapi-serializer', '~> 2.2'
 gem 'rswag-api'
 gem 'rswag-ui'
 gem 'rubocop', '~> 1.23'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-persistence'
+gem 'faker'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -38,6 +43,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'elasticsearch-extensions'
 end
 
 group :development do
