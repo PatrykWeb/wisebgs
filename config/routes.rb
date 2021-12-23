@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post 'facility_sport/create' => 'facility_sports#create'
       get 'facility_sport/index' => 'facility_sports#index'
       patch 'facility_sport/:id/update' => 'facility_sports#edit_id'
+      get 'facility_sport/search/:search' => "facility_sports#search"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

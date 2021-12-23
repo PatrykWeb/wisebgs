@@ -25,6 +25,7 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-persistence'
 gem 'faker'
+gem 'searchkick'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

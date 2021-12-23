@@ -3,9 +3,13 @@
 module Api
   module V1
     class FacilitySportsController < ApplicationController
-      before_action :authenticate_user!
-      before_action :check_profile
+      # before_action :authenticate_user!
+      # before_action :check_profile
 
+      def search
+        facility_sports = FacilitySport.search(params[:search])
+        render json: { data: facility_sports  }
+      end
 
       def index
         facility_sports = FacilitySport.all
