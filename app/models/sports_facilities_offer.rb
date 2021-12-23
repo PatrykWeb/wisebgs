@@ -1,0 +1,2 @@
+class SportsFacilitiesOffer < ApplicationRecord
+end

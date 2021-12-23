@@ -9,6 +9,7 @@ class CreateFacilitySports < ActiveRecord::Migration[6.1]
       t.string :city
       t.string :postal_code
       t.string :street
+      t.integer :type_business
       t.integer :status
       t.references :panel, foreign_key: true, null: false
       t.timestamps

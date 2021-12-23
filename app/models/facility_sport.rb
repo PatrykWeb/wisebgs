@@ -4,6 +4,9 @@ class FacilitySport < ApplicationRecord
   belongs_to :panel
   searchkick
 
+  FacilitySport.import
+  FacilitySport.reindex
+
   # include Elasticsearch::Model
   # include Elasticsearch::Model::Callbacks
   #
