@@ -34,4 +34,9 @@ class ApplicationController < ActionController::API
     profile = Profile.find_by(user_id: @current_user_id)
     render json: { errors: 'You must complete the profile to proceed further', status: :unauthorized } if profile.nil?
   end
+
+  def current_panel_id
+    panel = Panel.find_by(user_id: @current_user_id)
+    @panel_id = panel.id
+  end
 end

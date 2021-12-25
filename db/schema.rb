@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2021_12_23_222738) do
 
   create_table "sports_facilities_offers", force: :cascade do |t|
     t.string "name"
-    t.string "price"
-    t.string "type_offer"
+    t.decimal "price"
+    t.integer "type_offer"
     t.bigint "facility_sports_id", null: false
     t.bigint "panel_id", null: false
     t.datetime "created_at", precision: 6, null: false

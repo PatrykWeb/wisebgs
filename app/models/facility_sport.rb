@@ -2,6 +2,7 @@
 
 class FacilitySport < ApplicationRecord
   belongs_to :panel
+  has_many :sports_facilities_offers
   searchkick
 
   FacilitySport.import
